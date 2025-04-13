@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ales & Sky - 1 Month</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: #ffe6f0;
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #ff66b2;
+      margin-top: 30px;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    video {
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .message {
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff0f5;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    audio {
+      margin-top: 20px;
+    }
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #ff66b2;
+      clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 75%, 18% 100%, 0 35%);
+      animation: fall 6s linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy 1 Month, Sky! 💖</h1>
+  <div class="gallery">
+    <img src="IMG_4669.jpg" alt="Roblox Photo">
+    <img src="IMG_5029.jpg" alt="Heart Hands">
+    <video controls>
+      <source src="6561eccdd1364653ae4ffbf0767c7d77.mov" type="video/mp4">
+      Your browser does not support the video.
+    </video>
+  </div>
+  <div class="message">
+    <p><strong>I love you so much 💘</strong></p>
+    <p>Happy 1 month, my sweet girl. You are the most beautiful thing that could ever happen to me, and every day with you is a gift. I promise this is just the beginning. Yours forever, Ales. 💗</p>
+  </div>
+  <audio controls autoplay loop>
+    <source src="no-one-noticed.mp3" type="audio/mpeg">
+    Your browser does not support the audio.
+  </audio>
+
+  <!-- Falling hearts script -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
