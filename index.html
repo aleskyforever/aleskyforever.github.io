@@ -45,20 +45,27 @@
     audio {
       display: none;
     }
-    .heart {
+    .heart, .hello-kitty {
       position: fixed;
       width: 40px;
       height: 40px;
-      background-color: #ff66b2;
-      clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 75%, 18% 100%, 0 35%);
       animation: fall 6s linear infinite;
       opacity: 0.6;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 10px;
-      color: white;
       font-weight: bold;
+      z-index: 1000;
+    }
+    .heart {
+      background-color: #ff66b2;
+      clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 75%, 18% 100%, 0 35%);
+      color: white;
+    }
+    .hello-kitty {
+      background-image: url('https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png');
+      background-size: cover;
     }
     @keyframes fall {
       0% {
@@ -70,15 +77,41 @@
         opacity: 0;
       }
     }
+    .intro-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff0f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      font-size: 2em;
+      color: #ff66b2;
+      font-weight: bold;
+      animation: fadeOut 2s ease-in-out 2s forwards;
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="intro-animation">Ti amo Sky 💖</div>
+
   <h1>Happy 1 Month, Sky! 💖</h1>
   <div class="gallery">
     <img src="IMG_4669.jpg" alt="Roblox Photo">
     <img src="IMG_5029.jpg" alt="Heart Hands">
     <img src="image.png" alt="Sky and Ales Sitting">
     <img src="SVkisgE.png" alt="Sky and Ales with Swords">
+    <img src="IMB_kegH0V.gif" alt="GIF 1">
+    <img src="IMB_nJCoMP.gif" alt="GIF 2">
     <video controls>
       <source src="6561eccdd1364653ae4ffbf0767c7d77.mov" type="video/mp4">
       Your browser does not support the video.
@@ -104,7 +137,18 @@
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 6000);
     }
+
+    function createHelloKitty() {
+      const kitty = document.createElement('div');
+      kitty.classList.add('hello-kitty');
+      kitty.style.left = Math.random() * 100 + 'vw';
+      kitty.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      document.body.appendChild(kitty);
+      setTimeout(() => kitty.remove(), 6000);
+    }
+
     setInterval(createHeart, 300);
+    setInterval(createHelloKitty, 500);
   </script>
 </body>
 </html>
