@@ -43,16 +43,22 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     audio {
-      margin-top: 20px;
+      display: none;
     }
     .heart {
       position: fixed;
-      width: 20px;
-      height: 20px;
+      width: 40px;
+      height: 40px;
       background-color: #ff66b2;
       clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 75%, 18% 100%, 0 35%);
       animation: fall 6s linear infinite;
       opacity: 0.6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: white;
+      font-weight: bold;
     }
     @keyframes fall {
       0% {
@@ -67,10 +73,12 @@
   </style>
 </head>
 <body>
-  <h1>Happy 1 Month, My Love! 💖</h1>
+  <h1>Happy 1 Month, Sky! 💖</h1>
   <div class="gallery">
     <img src="IMG_4669.jpg" alt="Roblox Photo">
     <img src="IMG_5029.jpg" alt="Heart Hands">
+    <img src="image.png" alt="Sky and Ales Sitting">
+    <img src="SVkisgE.png" alt="Sky and Ales with Swords">
     <video controls>
       <source src="6561eccdd1364653ae4ffbf0767c7d77.mov" type="video/mp4">
       Your browser does not support the video.
@@ -78,18 +86,19 @@
   </div>
   <div class="message">
     <p><strong>I love you so much 💘</strong></p>
-    <p>Happy 1 month, my sweet girl. You are the most beautiful thing that could ever happen to me, and every day with you is a gift. I promise this is just the beginning. Yours forever, you are the best thing that ever happened to me and you are mine forever , i will always be here for you, i love you so much and happy 1 month my sweet girl. 💗</p>
+    <p>Happy 1 month, my sweet girl. You are the most beautiful thing that could ever happen to me, and every day with you is a gift. I promise this is just the beginning. Yours forever, Ales. 💗</p>
   </div>
-  <audio controls autoplay loop>
+  <audio autoplay loop>
     <source src="no-one-noticed.mp3" type="audio/mpeg">
     Your browser does not support the audio.
   </audio>
 
-  <!-- Falling hearts script -->
+  <!-- Falling hearts with date -->
   <script>
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
+      heart.innerText = '16 marzo 2025';
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
       document.body.appendChild(heart);
