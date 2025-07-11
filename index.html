@@ -28,7 +28,9 @@
     }
 
     img, video {
-      max-width: 90%;
+      max-width: 400px;  /* massimo 400px di larghezza */
+      width: 80%;        /* prendono l'80% del contenitore */
+      height: auto;
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
@@ -131,7 +133,8 @@
       }
 
       img, video {
-        max-width: 95%;
+        max-width: 90%;
+        width: 90%;
       }
 
       .message {
@@ -159,6 +162,9 @@
 
   <div class="countdown" id="countdown"></div>
 
+  <button class="secret-button" onclick="showSecret()">💌 Click me</button>
+  <div class="hidden-message" id="secretMessage">I love you so much my baby 💖</div>
+
   <div class="gallery">
     <img src="IMG_4669.jpg" alt="Roblox Photo" />
     <img src="IMG_5029.jpg" alt="Heart Hands" />
@@ -172,9 +178,6 @@
     <p><strong class="beating">I love you so much 💘</strong></p>
     <p>Happy 1 month, my sweet girl. You are the most beautiful thing that could ever happen to me, and every day with you is a gift. I promise this is just the beginning. Yours forever, Ales. 💗</p>
   </div>
-
-  <button class="secret-button" onclick="showSecret()">💌 Click me</button>
-  <div class="hidden-message" id="secretMessage">I love you so much my baby 💖</div>
 
   <audio controls autoplay loop>
     <source src="no-one-noticed.mp3" type="audio/mpeg" />
@@ -204,7 +207,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Secret button
     function showSecret() {
       document.getElementById("secretMessage").style.display = "block";
     }
